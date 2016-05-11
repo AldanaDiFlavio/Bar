@@ -12,17 +12,23 @@ public class BarTest {
 	@Test
 	public void testParaAgregarCliente(){ 
 		Bar bar = new Bar();
-		TreeSet<Cliente> miCliente = new TreeSet<Cliente>();
-		Cliente each = null;
 		bar.agregarCliente(new Cliente("Juan"));
-		Assert.assertTrue("Juan".equals(each.getNombre()));
+		bar.agregarCliente(new Cliente("Pedro"));
+		bar.agregarCliente(new Cliente("Alicia"));
+		bar.agregarCliente(new Cliente("Carla"));
+		TreeSet<Cliente> clientes = bar.mostrarCliente();
+		Assert.assertTrue(4==clientes.size());
 	}
 
 	@Test
 	public void testAgregarUnClienteRepetido(){
 		Bar bar = new Bar();
 		bar.agregarCliente(new Cliente("Juan"));
+		bar.agregarCliente(new Cliente("Alicia"));
+		bar.agregarCliente(new Cliente("Pedro"));
 		bar.agregarCliente(new Cliente("Juan"));
+		TreeSet<Cliente> clientes = bar.mostrarCliente();
+		Assert.assertTrue(3==clientes.size());
 	}
 	    
 	@Test
