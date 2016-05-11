@@ -25,8 +25,8 @@ public class BarTest {
 		Bar bar = new Bar();
 		bar.agregarCliente(new Cliente("Juan"));
 		bar.agregarCliente(new Cliente("Alicia"));
-		bar.agregarCliente(new Cliente("Pedro"));
 		bar.agregarCliente(new Cliente("Juan"));
+		bar.agregarCliente(new Cliente("Pedro"));
 		TreeSet<Cliente> clientes = bar.mostrarCliente();
 		Assert.assertTrue(3==clientes.size());
 	}
